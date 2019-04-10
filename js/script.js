@@ -3,6 +3,7 @@
 function titleClickHandler(event){
   const clickedElement = this;
   console.log('Link was clicked!');
+  console.log(event)
 
   /* remove class 'active' from all article links  */
   
@@ -22,7 +23,7 @@ for(let activeLink of activeLinks){
 
   /* remove class 'active' from all articles */
   
-  const activeArticles = document.querySelectorAll('.posts a.active');
+  const activeArticles = document.querySelectorAll('.articles .active');
 
   for(let activeArticle of activeArticles){
     activeArticle.classList.remove('active');
