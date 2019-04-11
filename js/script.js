@@ -14,16 +14,12 @@ for(let activeLink of activeLinks){
 }
 
   /* add class 'active' to the clicked link */
-  
-  let this {
-   this.classList.add('active');
-  console.log('clickedElement:', clickedElement);
-  }
 
+  this.classList.add('active');
 
   /* remove class 'active' from all articles */
   
-  const activeArticles = document.querySelectorAll('.articles .active');
+  const activeArticles = document.querySelectorAll('.posts article.active');
 
   for(let activeArticle of activeArticles){
     activeArticle.classList.remove('active');
