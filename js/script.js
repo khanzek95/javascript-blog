@@ -45,7 +45,7 @@ for(let activeLink of activeLinks){
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles';
+  optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list';
 
 function generateTitleLinks(){
@@ -104,19 +104,29 @@ function generateTags(){
   /* START LOOP: for every article: */
  
   for(let article of articles) {
+    const titleList = article.querySelector(optArticleTagsSelector);
+    let html = '';
+    const articleTags = article.getAttribute('data-tags');
+    console.log(articleTags);
+    const articleTagsArray = articleTags.split(' ');
+    for(let tag of articleTagsArray){
+      console.log(articleTagsArray);
+      const linkHTML = '<li><a href="#tag-' + articleTags + '</a></li>';
+      console.log(linkHTML);
+      html = html + linkHTML;
+    }
+    titleList.innerHTML = html;
   }
+  
+   
+
     /* find tags wrapper */
 
-    const titleList = article.querySelector(optArticleTagsSelector);
 
     /* make html variable with empty string */
 
-    let html = '';
 
     /* get tags from data-tags attribute */
-
-    const articleTags = article.getAttribute('href');
-    console.log(articleTags);
 
     /* split tags into array */
 
