@@ -111,7 +111,7 @@ function generateTags(){
     const articleTagsArray = articleTags.split(' ');
     for(let tag of articleTagsArray){
       console.log(articleTagsArray);
-      const linkHTML = '<li><a href="#tag-' + articleTags + '</a></li>';
+      const linkHTML = '<li><a href="#tag-' + articleTagsArray + '"><span>' + articleTagsArray + '</span></a></li>';
       console.log(linkHTML);
       html = html + linkHTML;
     }
