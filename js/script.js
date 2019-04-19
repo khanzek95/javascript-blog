@@ -107,18 +107,25 @@ function generateTags(){
     const titleList = article.querySelector(optArticleTagsSelector);
     let html = '';
     const articleTags = article.getAttribute('data-tags');
-    console.log(articleTags);
     const articleTagsArray = articleTags.split(' ');
+    articleTagsArray.forEach(function(value) {
+      console.log(value);
+      });
     for(let tag of articleTagsArray){
-      console.log(articleTagsArray);
-      const linkHTML = '<li><a href="#tag-' + articleTagsArray + '"><span>' + articleTagsArray + '</span></a></li>';
+      const linkHTML = '<li><a href="#tag-' + articleTags + '"><span>' + articleTagsArray + '</span></a></li>';
       console.log(linkHTML);
       html = html + linkHTML;
     }
+    
     titleList.innerHTML = html;
   }
-  
-   
+
+
+  const tagi = ["pies", "kot", "jaszczurka", "mysz"];
+  for(let tag of tagi) {
+  console.log(tagi [0,1,2,3]);
+  };
+  }
 
     /* find tags wrapper */
 
@@ -141,6 +148,5 @@ function generateTags(){
     /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
-}
 
 generateTags();
