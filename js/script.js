@@ -113,7 +113,7 @@ function generateTags(){
       console.log(value);
       });
     for(let tag of articleTagsArray){
-      const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+      const linkHTML = '  <li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
       console.log(linkHTML);
       html = html + linkHTML;
     }
@@ -142,6 +142,23 @@ function tagClickHandler(event){
 
    generateTitleLinks('[data-tags~="' + tag + '"]'); /* execute function "generateTitleLinks" with article selector as argument */
 
+}
+
+function generateAuthors() {
+
+  const authors = document.querySelectorAll('.p .post-author');
+
+  for(let author of authors) {
+    const authorList = author.querySelector('.p .post-author');
+    let html = '';
+    const authorEach = author.getAttribute('post-author');
+    console.log(authorEach);
+    const linkHTML = ' <li><a href="#author-' + authorEach + '"><span>' + authorEach + '</span></a></li>';
+    console.log(linkHTML);
+    html = html + linkHTML;
+  }
+
+    authorList.innerHTML = html;
 }
 
 function addClickListenersToTags(){
