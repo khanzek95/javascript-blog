@@ -7,7 +7,7 @@ function titleClickHandler(event){
   console.log(event);
    const activeLinks = document.querySelectorAll('.titles a.active');
    for(let activeLink of activeLinks){  /* remove class 'active' from all article links  */
-   ctiveLink.classList.remove('active');
+   activeLink.classList.remove('active');
   }
   this.classList.add('active'); /* add class 'active' to the clicked link */
   const activeArticles = document.querySelectorAll('.posts article.active'); /* remove class 'active' from all articles */
@@ -25,9 +25,9 @@ function titleClickHandler(event){
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list';
-  optArticleAuthorSelector = 'p.post-author';
-  optTagsSelector = '.tags a';
+  optArticleTagsSelector = '.post-tags .list',
+  optArticleAuthorSelector = 'p.post-author',
+  optTagsSelector = '.tags a',
   optPostTagsSelector = '.post-tags .list a';
 
 function generateTitleLinks(customSelector = ''){
@@ -132,12 +132,12 @@ function authorClickHandler(event){
   const clickedElement = this;
   const author = this.getAttribute('href');
   const authorHref = author.replace('#tag-', '');
-  const authorLinkActives = document.querySelectorAll('a.active[href^="#tag-"]');
-  for (let authorLinkActive of authorLinkActives){
+  const authorLinksActive = document.querySelectorAll('a.active[href^="#tag-"]');
+  for (let authorLinkActive of authorLinksActive){
     authorLinkActive.classList.remove('active');
   }
- const eachAuthorWithHrefs = document.querySelectorAll('a[data-author"' + href + '"]');
- for (let eachAuthorWithHref of eachAuthorWithHrefs){
+ const tagsWithHref = document.querySelectorAll('a[data-author"' + href + '"]');
+ for (let tagWithHref of tagWithHref){
    eachAuthorWithHref.classList.add('active');
  }
 
