@@ -28,11 +28,7 @@ const optArticleSelector = '.post',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorSelector = 'p.post-author',
   optTagsSelector = '.tags a',
-<<<<<<< HEAD
   optPostTagsSelector = '.post-tags .list a',
-=======
-  optPostTagsSelector = '.post-tags .list a';
->>>>>>> cf64a91213112f65da4bbfafe7d3a375b3b9664a
   optTagsListSelector = '.tags.list';
 
 function generateTitleLinks(customSelector = ''){
@@ -97,11 +93,7 @@ function calculateTagsParams(tags){
 
 function generateTags(){
 
-<<<<<<< HEAD
   let allTags = {};
-=======
-  let allTags = [];
->>>>>>> cf64a91213112f65da4bbfafe7d3a375b3b9664a
 
   /* find all articles */
 
@@ -120,17 +112,11 @@ function generateTags(){
     for(let tag of articleTagsArray){
       const linkHTML = '  <li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
       html = html + linkHTML;
-<<<<<<< HEAD
       if(!allTags.hasOwnProperty(tag)){
         /* [NEW] add generated code to allTags array */
         allTags[tag] = 1;
       } else {
         allTags[tag]++;
-=======
-      if(allTags.indexOf(linkHTML) == -1){
-        /* [NEW] add generated code to allTags array */
-        allTags.push(linkHTML);
->>>>>>> cf64a91213112f65da4bbfafe7d3a375b3b9664a
       }
     }
     
@@ -140,7 +126,6 @@ function generateTags(){
 /* [NEW] find list of tags in right column */
 const tagList = document.querySelector('.tags');
 
-<<<<<<< HEAD
 /* create variable for all link HTML code */
 const tagsParams = calculateTagsParams(allTags);
 console.log('tagsParams', tagsParams);
@@ -159,12 +144,6 @@ for (let tag in allTags){
 tagList.innerHTML = allTagsHTML
 
 }
-=======
-/* [NEW] add html from allTags to tagList */
-tagList.innerHTML = allTags.join(' ');
-}
-
->>>>>>> cf64a91213112f65da4bbfafe7d3a375b3b9664a
 
 
 generateTags();
